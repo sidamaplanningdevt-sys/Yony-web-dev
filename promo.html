@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromoHub - Showcase Your Business</title>
+    <meta property="og:title" content="PromoHub - Showcase Your Business">
+    <meta property="og:description" content="The perfect platform to promote organizations, hotels, bureaus, and market areas with multimedia content">
+    <meta property="og:image" content="https://example.com/promohub-preview.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+/*<link rel="stylesheet" href="style.css">*/
+        /* CSS Reset and Variables */
+        :root {
+            --primary: #4a6cf7;
+            --secondary: #6c757d;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f7fe;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #2c4fd6);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            background: linear-gradient(rgba(74, 108, 247, 0.8), rgba(74, 108, 247, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234a6cf7" opacity="0.2"/><path d="M0 0L100 100" stroke="white" stroke-width="2" opacity="0.1"/><path d="M100 0L0 100" stroke="white" stroke-width="2" opacity="0.1"/></svg>');
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-img img {
+            transform: scale(1.05);
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .feature-content p {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Upload Section (now in admin) */
+        .upload-section {
+            padding: 5rem 2rem;
+            background-color: var(--light);
+        }
+        
+        .upload-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .upload-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .upload-option {
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            flex: 1;
+            max-width: 200px;
+        }
+        
+        .upload-option.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .upload-option:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .upload-form {
+            display: none;
+        }
+        
+        .upload-form.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .file-upload {
+            border: 2px dashed #ddd;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary);
+        }
+        
+        .file-upload i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+        
+        .item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+        
+        .gallery-item:hover .item-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 900px;
+            width: 90%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        /* Admin Styles */
+        .admin-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 5px;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .admin-item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            background: var(--light);
+        }
+        
+        .admin-item button {
+            margin-right: 0.5rem;
+            padding: 0.3rem 0.6rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        
+        .admin-item button:nth-child(1) {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .admin-item button:nth-child(2) {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .upload-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .upload-option {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .admin-tabs {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .features, .gallery {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Promo<span>Hub</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="adminBtn">Admin</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Showcase Your Business to the World</h1>
+            <p>Promote organizations, hotels, bureaus, and market areas with stunning multimedia content that gets shared across social media platforms.</p>
+            <a href="#gallery" class="cta-button">Explore Gallery</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Why Choose PromoHub</h2>
+            <p>Our platform offers everything you need to create compelling promotional content</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%234a6cf7'/><circle cx='200' cy='100' r='50' fill='%23ff6b6b'/></svg>" alt="Easy Upload">
+                </div>
+                <div class="feature-content">
+                    <h3>Easy Content Upload</h3>
+                    <p>Upload images, videos, and text with our intuitive interface. No technical skills required.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%234a6cf7'/><path d='M100,50 L300,50 L300,150 L100,150 Z' fill='%23ff6b6b'/></svg>" alt="Social Media Integration">
+                </div>
+                <div class="feature-content">
+                    <h3>Social Media Integration</h3>
+                    <p>Share your content directly to all major social platforms with optimized previews.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%234a6cf7'/><polygon points='200,50 250,150 150,150' fill='%23ff6b6b'/></svg>" alt="Analytics">
+                </div>
+                <div class="feature-content">
+                    <h3>Performance Analytics</h3>
+                    <p>Track how your content performs across different platforms and audiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-title">
+            <h2>Featured Promotions</h2>
+            <p>Explore promotional content from various organizations</p>
+        </div>
+        <div class="gallery-filters">
+            <div class="filter-btn active" data-filter="all">All</div>
+            <div class="filter-btn" data-filter="hotels">Hotels</div>
+            <div class="filter-btn" data-filter="restaurants">Restaurants</div>
+            <div class="filter-btn" data-filter="tourism">Tourism</div>
+            <div class="filter-btn" data-filter="retail">Retail</div>
+        </div>
+        <div class="gallery-grid">
+            <!-- Dynamic content loaded by JS -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-close">&times;</div>
+            <div class="modal-body">
+                <h2>Admin Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="cta-button">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div class="modal" id="admin-modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-body">
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="uploads">Manage Uploads</button>
+                    <button class="tab-btn" data-tab="messages">Manage Messages</button>
+                </div>
+                <div id="uploads-tab" class="tab-content active">
+                    <div class="section-title">
+                        <h2>Create Your Promotion</h2>
+                        <p>Upload your content to create stunning promotional materials</p>
+                    </div>
+                    <div class="upload-container">
+                        <div class="upload-options">
+                            <div class="upload-option active" data-target="image-upload">Image</div>
+                            <div class="upload-option" data-target="video-upload">Video</div>
+                            <div class="upload-option" data-target="text-upload">Text</div>
+                        </div>
+                        
+                        <form id="image-upload" class="upload-form active">
+                            <div class="form-group">
+                                <label for="image-title">Title</label>
+                                <input type="text" id="image-title" placeholder="Enter a title for your image">
+                            </div>
+                            <div class="form-group">
+                                <label for="image-description">Description</label>
+                                <textarea id="image-description" placeholder="Describe your image"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="image-category">Category</label>
+                                <select id="image-category">
+                                    <option value="">Select a category</option>
+                                    <option value="hotels">Hotels</option>
+                                    <option value="restaurants">Restaurants</option>
+                                    <option value="tourism">Tourism Bureaus</option>
+                                    <option value="retail">Retail Markets</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="file-upload">
+                                    <i>📁</i>
+                                    <p>Click to upload an image or drag and drop</p>
+                                    <input type="file" style="display: none;" accept="image/*">
+                                </div>
+                            </div>
+                            <button type="submit" class="cta-button">Upload Image</button>
+                        </form>
+                        
+                        <form id="video-upload" class="upload-form">
+                            <div class="form-group">
+                                <label for="video-title">Title</label>
+                                <input type="text" id="video-title" placeholder="Enter a title for your video">
+                            </div>
+                            <div class="form-group">
+                                <label for="video-description">Description</label>
+                                <textarea id="video-description" placeholder="Describe your video"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="video-category">Category</label>
+                                <select id="video-category">
+                                    <option value="">Select a category</option>
+                                    <option value="hotels">Hotels</option>
+                                    <option value="restaurants">Restaurants</option>
+                                    <option value="tourism">Tourism Bureaus</option>
+                                    <option value="retail">Retail Markets</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="file-upload">
+                                    <i>📁</i>
+                                    <p>Click to upload a video or drag and drop</p>
+                                    <input type="file" style="display: none;" accept="video/*">
+                                </div>
+                            </div>
+                            <button type="submit" class="cta-button">Upload Video</button>
+                        </form>
+                        
+                        <form id="text-upload" class="upload-form">
+                            <div class="form-group">
+                                <label for="text-title">Title</label>
+                                <input type="text" id="text-title" placeholder="Enter a title for your content">
+                            </div>
+                            <div class="form-group">
+                                <label for="text-content">Content</label>
+                                <textarea id="text-content" placeholder="Write your promotional content here"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="text-category">Category</label>
+                                <select id="text-category">
+                                    <option value="">Select a category</option>
+                                    <option value="hotels">Hotels</option>
+                                    <option value="restaurants">Restaurants</option>
+                                    <option value="tourism">Tourism Bureaus</option>
+                                    <option value="retail">Retail Markets</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="cta-button">Publish Content</button>
+                        </form>
+                    </div>
+                    <h3>Existing Uploads</h3>
+                    <!-- Dynamic list -->
+                </div>
+                <div id="messages-tab" class="tab-content">
+                    <h3>Client Messages</h3>
+                    <!-- Dynamic list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Upload Modal -->
+    <div class="modal" id="edit-upload-modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-body">
+                <h2>Edit Upload</h2>
+                <form id="edit-upload-form">
+                    <input type="hidden" id="edit-upload-id">
+                    <div class="form-group">
+                        <label for="edit-upload-title">Title</label>
+                        <input type="text" id="edit-upload-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-upload-description">Description</label>
+                        <textarea id="edit-upload-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-upload-category">Category</label>
+                        <select id="edit-upload-category" required>
+                            <option value="hotels">Hotels</option>
+                            <option value="restaurants">Restaurants</option>
+                            <option value="tourism">Tourism Bureaus</option>
+                            <option value="retail">Retail Markets</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Message Modal -->
+    <div class="modal" id="edit-message-modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-body">
+                <h2>Edit Message</h2>
+                <form id="edit-message-form">
+                    <input type="hidden" id="edit-message-id">
+                    <div class="form-group">
+                        <label for="edit-message-name">Name</label>
+                        <input type="text" id="edit-message-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-message-email">Email</label>
+                        <input type="email" id="edit-message-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-message-content">Message</label>
+                        <textarea id="edit-message-content" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About PromoHub</h3>
+                <p>PromoHub is the leading platform for organizations to create and share compelling promotional content across social media channels.</p>
+                <div class="social-links">
+                    <a href="#"><span>f</span></a>
+                    <a href="#"><span>t</span></a>
+                    <a href="#"><span>in</span></a>
+                    <a href="#"><span>ig</span></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>Email: info@promohub.com</p>
+                <p>Phone: +251 (916) 36-9195</p>
+                <p>Address: 123 Promotion Ave, Marketing City</p>
+            </div>
+            <div class="footer-col">
+                <h3>Send Message</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 PromoHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Upload option tabs (now in admin)
+            const uploadOptions = document.querySelectorAll('.upload-option');
+            const uploadForms = document.querySelectorAll('.upload-form');
+            
+            uploadOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Update active option
+                    uploadOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding form
+                    uploadForms.forEach(form => {
+                        form.classList.remove('active');
+                        if (form.id === target) {
+                            form.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Helper function to store upload
+            function storeUpload(data) {
+                let uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                uploads.push(data);
+                localStorage.setItem('uploads', JSON.stringify(uploads));
+                loadGallery(); // Refresh gallery
+            }
+
+            // Upload form submissions (admin only)
+            const forms = document.querySelectorAll('.upload-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const type = this.id.split('-')[0]; // image, video, text
+                    const titleInput = this.querySelector('input[type="text"]');
+                    const descInput = this.querySelector('textarea');
+                    const catSelect = this.querySelector('select');
+                    const fileInput = this.querySelector('input[type="file"]');
+
+                    if (!titleInput.value || !descInput.value || !catSelect.value) {
+                        alert('Please fill all fields');
+                        return;
+                    }
+
+                    const data = {
+                        id: Date.now(),
+                        type,
+                        title: titleInput.value,
+                        description: descInput.value,
+                        category: catSelect.value,
+                        date: new Date().toISOString()
+                    };
+
+                    if (type !== 'text' && fileInput && fileInput.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            data.file = e.target.result;
+                            storeUpload(data);
+                            alert('Upload successful!');
+                            form.reset();
+                            const uploadText = form.querySelector('.file-upload p');
+                            if (uploadText) {
+                                uploadText.textContent = 'Click to upload or drag and drop';
+                            }
+                        };
+                        reader.readAsDataURL(fileInput.files[0]);
+                    } else {
+                        storeUpload(data);
+                        alert('Upload successful!');
+                        form.reset();
+                    }
+                });
+            });
+
+            // File upload interaction
+            const fileUploads = document.querySelectorAll('.file-upload');
+            fileUploads.forEach(upload => {
+                const input = upload.querySelector('input');
+                upload.addEventListener('click', () => input.click());
+                input.addEventListener('change', () => {
+                    if (input.files[0]) {
+                        upload.querySelector('p').textContent = input.files[0].name;
+                    }
+                });
+            });
+
+            // Contact form submission
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const message = document.getElementById('contact-message').value;
+
+                if (!name || !email || !message) {
+                    alert('Please fill all fields');
+                    return;
+                }
+
+                const msgData = {
+                    id: Date.now(),
+                    name,
+                    email,
+                    message,
+                    date: new Date().toISOString()
+                };
+
+                let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+                messages.push(msgData);
+                localStorage.setItem('messages', JSON.stringify(messages));
+                alert('Message sent successfully!');
+                e.target.reset();
+            });
+
+            // Gallery loading and filtering
+            function loadGallery(filter = 'all') {
+                let uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                if (filter !== 'all') {
+                    uploads = uploads.filter(u => u.category === filter);
+                }
+                const galleryGrid = document.querySelector('.gallery-grid');
+                galleryGrid.innerHTML = uploads.slice(-6).reverse().map(item => {
+                    let mediaHtml = '';
+                    if (item.type === 'image' && item.file) {
+                        mediaHtml = `<img src="${item.file}" alt="${item.title}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\'><rect width=\'400\' height=\'250\' fill=\'%234a6cf7\'/></svg>'">`;
+                    } else if (item.type === 'video' && item.file) {
+                        mediaHtml = `<video controls style="height:100%;"><source src="${item.file}" type="video/mp4"></video>`;
+                    } else if (item.type === 'text') {
+                        mediaHtml = `<div style="height:100%; display:flex; align-items:center; justify-content:center; background:white; padding:1rem; text-align:center;">${item.description.substring(0, 100)}...</div>`;
+                    } else {
+                        mediaHtml = `<img src="data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\'><rect width=\'400\' height=\'250\' fill=\'%234a6cf7\'/></svg>" alt="Placeholder">`;
+                    }
+                    return `
+                        <div class="gallery-item" data-category="${item.category}">
+                            ${mediaHtml}
+                            <div class="item-overlay">
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('') || '<p style="grid-column:1/-1; text-align:center; color:var(--secondary);">No content yet. Contact us to feature your business!</p>';
+            }
+
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    loadGallery(filter);
+                });
+            });
+
+            loadGallery(); // Initial load
+
+            // Gallery modal
+            const galleryModal = document.getElementById('gallery-modal') || (() => {
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.id = 'gallery-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <div class="modal-close">&times;</div>
+                        <div class="modal-body"></div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                return modal;
+            })();
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.gallery-item')) {
+                    const item = e.target.closest('.gallery-item');
+                    const content = item.querySelector('img, video, div');
+                    const title = item.querySelector('h3')?.textContent || 'Untitled';
+                    const description = item.querySelector('p')?.textContent || '';
+                    if (content) {
+                        let modalContent = '';
+                        if (content.tagName === 'IMG') {
+                            modalContent = `<img src="${content.src}" alt="${title}" style="width:100%; border-radius:5px;">`;
+                        } else if (content.tagName === 'VIDEO') {
+                            modalContent = content.outerHTML;
+                        } else {
+                            modalContent = `<div style="padding:2rem; text-align:center;">${content.innerHTML}</div>`;
+                        }
+                        modalContent += `<div style="margin-top:1.5rem;"><h2>${title}</h2><p>${description}</p></div>`;
+                        galleryModal.querySelector('.modal-body').innerHTML = modalContent;
+                        galleryModal.style.display = 'flex';
+                    }
+                }
+            });
+
+            galleryModal.querySelector('.modal-close').addEventListener('click', () => { galleryModal.style.display = 'none'; });
+            window.addEventListener('click', (e) => {
+                if (e.target === galleryModal) galleryModal.style.display = 'none';
+            });
+
+            // Admin functionality
+            const adminBtn = document.getElementById('adminBtn');
+            const loginModal = document.getElementById('login-modal');
+            const adminModal = document.getElementById('admin-modal');
+            adminBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+            });
+
+            document.getElementById('login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                if (username === 'admin' && password === 'password') {
+                    loginModal.style.display = 'none';
+                    adminModal.style.display = 'flex';
+                    loadAdminData();
+                } else {
+                    alert('Invalid credentials. Use admin/password');
+                }
+            });
+
+            // Tab switching
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    document.getElementById(btn.dataset.tab + '-tab').classList.add('active');
+                    if (btn.dataset.tab === 'uploads') loadUploads();
+                    if (btn.dataset.tab === 'messages') loadMessages();
+                });
+            });
+
+            function loadAdminData() {
+                loadUploads();
+                loadMessages();
+            }
+
+            function loadUploads() {
+                const uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                const tab = document.getElementById('uploads-tab');
+                const existingSection = tab.querySelector('h3');
+                existingSection.nextElementSibling.innerHTML = uploads.map(u => `
+                    <div class="admin-item">
+                        <h4>${u.title}</h4>
+                        <p>${u.description}</p>
+                        <p>Category: ${u.category} | Type: ${u.type} | Date: ${new Date(u.date).toLocaleDateString()}</p>
+                        ${u.file ? (u.type === 'image' ? `<img src="${u.file}" style="max-width:200px; border-radius:5px;" onerror="this.style.display=\'none\'">` : `<video controls style="max-width:200px;" src="${u.file}"></video>`) : ''}
+                        <br>
+                        <button onclick="editUpload(${u.id})">Edit</button>
+                        <button onclick="deleteUpload(${u.id})">Delete</button>
+                    </div>
+                `).join('') || '<p>No uploads yet.</p>';
+            }
+
+            function loadMessages() {
+                const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+                const tab = document.getElementById('messages-tab');
+                tab.innerHTML = '<h3>Client Messages</h3>' + messages.map(m => `
+                    <div class="admin-item">
+                        <h4>${m.name} (${m.email})</h4>
+                        <p>${m.message}</p>
+                        <p>Date: ${new Date(m.date).toLocaleDateString()}</p>
+                        <br>
+                        <button onclick="editMessage(${m.id})">Edit</button>
+                        <button onclick="deleteMessage(${m.id})">Delete</button>
+                    </div>
+                `).join('') || '<h3>Client Messages</h3><p>No messages yet.</p>';
+            }
+
+            window.editUpload = function(id) {
+                const uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                const item = uploads.find(u => u.id === id);
+                if (item) {
+                    document.getElementById('edit-upload-id').value = id;
+                    document.getElementById('edit-upload-title').value = item.title;
+                    document.getElementById('edit-upload-description').value = item.description;
+                    document.getElementById('edit-upload-category').value = item.category;
+                    document.getElementById('edit-upload-modal').style.display = 'flex';
+                }
+            };
+
+            document.getElementById('edit-upload-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = parseInt(document.getElementById('edit-upload-id').value);
+                let uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                const index = uploads.findIndex(u => u.id === id);
+                if (index > -1) {
+                    uploads[index].title = document.getElementById('edit-upload-title').value;
+                    uploads[index].description = document.getElementById('edit-upload-description').value;
+                    uploads[index].category = document.getElementById('edit-upload-category').value;
+                    localStorage.setItem('uploads', JSON.stringify(uploads));
+                    document.getElementById('edit-upload-modal').style.display = 'none';
+                    loadUploads();
+                    loadGallery();
+                    alert('Upload updated!');
+                }
+            });
+
+            window.deleteUpload = function(id) {
+                if (confirm('Are you sure you want to delete this upload?')) {
+                    let uploads = JSON.parse(localStorage.getItem('uploads') || '[]');
+                    uploads = uploads.filter(u => u.id !== id);
+                    localStorage.setItem('uploads', JSON.stringify(uploads));
+                    loadUploads();
+                    loadGallery();
+                }
+            };
+
+            window.editMessage = function(id) {
+                const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+                const item = messages.find(m => m.id === id);
+                if (item) {
+                    document.getElementById('edit-message-id').value = id;
+                    document.getElementById('edit-message-name').value = item.name;
+                    document.getElementById('edit-message-email').value = item.email;
+                    document.getElementById('edit-message-content').value = item.message;
+                    document.getElementById('edit-message-modal').style.display = 'flex';
+                }
+            };
+
+            document.getElementById('edit-message-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = parseInt(document.getElementById('edit-message-id').value);
+                let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+                const index = messages.findIndex(m => m.id === id);
+                if (index > -1) {
+                    messages[index].name = document.getElementById('edit-message-name').value;
+                    messages[index].email = document.getElementById('edit-message-email').value;
+                    messages[index].message = document.getElementById('edit-message-content').value;
+                    localStorage.setItem('messages', JSON.stringify(messages));
+                    document.getElementById('edit-message-modal').style.display = 'none';
+                    loadMessages();
+                    alert('Message updated!');
+                }
+            });
+
+            window.deleteMessage = function(id) {
+                if (confirm('Are you sure you want to delete this message?')) {
+                    let messages = JSON.parse(localStorage.getItem('messages') || '[]');
+                    messages = messages.filter(m => m.id !== id);
+                    localStorage.setItem('messages', JSON.stringify(messages));
+                    loadMessages();
+                }
+            };
+
+            // Modal closes
+            document.querySelectorAll('.modal-close').forEach(close => {
+                close.addEventListener('click', () => {
+                    close.closest('.modal').style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal')) {
+                    e.target.style.display = 'none';
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            });
+            
+            function checkWidth() {
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                    mobileMenuBtn.style.display = 'block';
+                } else {
+                    nav.style.display = 'flex';
+                    mobileMenuBtn.style.display = 'none';
+                }
+            }
+            window.addEventListener('resize', checkWidth);
+            checkWidth();
+        });
+    </script>
+</body>
+</html>
